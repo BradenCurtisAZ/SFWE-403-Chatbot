@@ -1,0 +1,56 @@
+/* General chat box styling */
+#chat-container {
+    width: 400px;
+    height: 600px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+}
+
+#user-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Style for user messages */
+.user-message {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    align-self: flex-end; /* Aligns the message to the right */
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+/* Style for bot messages */
+.bot-message {
+    background-color: #e0e0e0; /* Light grey background */
+    color: black; /* Black text */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    align-self: flex-start; /* Aligns the message to the left */
+    max-width: 70%;
+    word-wrap: break-word;
+}
