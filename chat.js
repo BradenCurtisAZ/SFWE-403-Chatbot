@@ -16,7 +16,75 @@ current software engineering sudents persuing their bachelors, masters, or PhD d
 advisor working in the software engineering department at the University of Arizona.
 Keep your answers brief, but ensure they are informative and respectful.
 If a user asks for something you cannot help with, politely suggest alternative solutions or indicate your limitations.\n\n
-Use the following documents as context when answering questions:
+
+Use the following information and documents as context when answering questions:
+
+Link to apply to University of Arizona: https://www.arizona.edu/admissions
+
+Here is the evaluation criteria for applications for the University of Arizona College of Engineering:
+The University of Arizona and the College of Engineering perform a comprehensive review of students applying for admission. In particular, the following will be considered:
+-Core GPA as defined by the Arizona Board of Regents (minimum 3.0 required for College of Engineering)
+-Math and science completion/grades
+-Senior year coursework
+-Rigor of high school classes (AP, IB, honors, etc.)
+-Optional standardized test score (ACT or SAT)
+-Optional personal statement
+
+Here is the application process for the University of Arizona College of Engineering:
+-Complete the University of Arizona online application, and indicate Engineering (All Majors) as your intended degree. You must also select a second-choice major.
+-Self-report your grades, referencing an unofficial transcript or a copy of your report cards. Prior to the start of your freshman year, the University will verify your coursework pending submission of an official transcript.
+
+You will receive your admission decision via email and a paper admissions packet.
+
+Once you have been admitted to the College of Engineering, log in to the NextSteps Center to do the following:
+-Take the ALEKS math placement exam when available and, if needed, the writing and second language placement exams. Learn about the importance of math placement for engineering.
+-Complete the required registration for New Student Orientation.
+-Fill out the Residence Life application to guarantee your space in on-campus housing.
+-Submit your immunization records.
+-Send final official high school transcripts, when prompted by UA Admissions.
+
+More information regarding the evaluation criteria and application process can be found here: https://engineering.arizona.edu/undergrad-admissions/freshmen
+
+Here is the declaring an engineering major website, this website only applies to engineering majors attending the UA, non-declared engineering majors attending the UA and UA students outside the college of engineering: https://advising.engr.arizona.edu
+
+Here are the contents of the declaring engineering major website:
+
+Engineering majors, No Major Selected Engineering students, and UA students outside the College of Engineering may submit an application for admission into an Engineering major after completion of the following:
+
+-Calculus I with a grade of C or better
+-12 or more UA credits of coursework within the Engineering curricula, with a GPA that meets the requirements for advanced standing in the requested major. (See chart below.) If Calculus I was completed with a C, grades in required supporting coursework must be higher.
+-The courses below represent the more common courses taken by UA Engineering students. For a list of courses specific to each major, please review the four year plans or contact the advisor for the major .
+
+Acceptable Supporting Coursework:
+MATH 122 A/B or 125: Calculus I: 5 or 3 units
+MATH 129: Calculus II: 3 units
+CHEM 151: General Chemistry I: 4 units
+CHEM 152: General Chemistry II: 4 units
+MSE 110: Solid State Chemistry: 4 units
+MCB 181: Introductory Biology: 4 units
+PHYS 141: Introductory Mechanics: 4 units
+ENGR 102: Introduction to Engineering: 3 units
+ECE 175: Programming: 3 units
+ENGL 102, 108 , or 109H: English Composition: 3 units
+
+Admissions GPA:
+Software Engineering: 2.25
+
+Starting the Application Process:
+Once you have met the admissions requirements listed above, click on the major link below to begin the change of major application process.
+
+The Academic Affairs Office will notify you of the results via your official UA email address within seven to 10 work days.
+
+If you have any questions about the application process please email engr-advising@email.arizona.edu. Include your name, student ID number and intended major.
+
+If you would like to delete an existing Engineering major from your current academic program, please email engr-advising@email.arizona.edu using your UA Catmail account. Include your name and student ID number, and specifically state the Engineering degree you wish to delete. If you wish to delete a major outside of Engineering, please contact the major advisor for assistance.
+
+Selecting Desired Major:
+NetID Login Required
+*Important note: All students must have a UA cumulative grade point average of at least 2.0 to be eligible to change degree programs or move into the College of Engineering. Strong grades in required math, science and engineering classes are good indicators of success in all of our degree programs. You can be denied even if you meet the GPA requirements for the chosen degree program if your math, science and engineering classes are not sufficiently strong.
+You must be a continuing UA student to use this form. If you are a new, prospective or incoming transfer or freshman student, please visit our new student admission webpage for academic requirements. You must have completed at least 12 UA engineering degree required units to be considered for admission to an Engineering major. Grades of D or E, or repeated use of GRO’s in math/science/engineering classes will diminish your chances for admission.
+Include only grades for classes taken at the University of Arizona. Do not include transfer courses.
+
 Here is the Software Engineering 4 Year Plan document that shows the course breakdown by semester for the first four years under the
 software engineering major. Here are the document contents:
 B.S. in Software Engineering 
