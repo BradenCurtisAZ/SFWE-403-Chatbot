@@ -1,0 +1,52 @@
+M.S. in Software Engineering 
+Below is the program requirements for this degree program on Main Campus as of 10/29/2024.
+
+Program Curriculum:
+The MS Software Engineering requires 30 credit hours to complete. Students may elect either the Thesis or Non-Thesis Option.
+Thesis route: 24 units of SFWE graded coursework + 6 units of SFWE 910 (Thesis)
+Non-Thesis: 30 units of SFWE graded coursework
+
+Required Core Courses (12 total):
+SFWE 507 - Foundations of Software Engineering (3 units)
+
+Complete 3 courses of additional Core coursework (select 3 from the following list of courses):
+SFWE 502 - Software DevSecOps (3 units)
+SFWE 503 - Software Project Management (3 units)
+SFWE 504 - Software Requirements Analysis and Test (3 units)
+SFWE 505 - Software Architecture and Design (3 units)
+SFWE 506 - Distributed Computing (3 units)
+
+Elective Coursework: complete one of the two subplans below
+Subplan 1 (Non-Thesis Option): 
+Complete 18 units from the Technical Computing Electives list or in a closely related computing field (must be approved by graduate studies committee). 
+Any SFWE core courses not used to meet the 12-units of Core coursework requirement can also be used as technical electives.
+
+Subplan 2 (Thesis Option):
+Complete 12 units from the Technical Computing Electives list or in a closely related computing field (must be approved by graduate studies committee). 
+Any SFWE core courses not used to meet the 12-units of Core coursework requirement can also be used as technical electives.
+
+Technical Computing Electives:
+SFWE 501 - SW Assurance (3 units)
+SFWE 508 – Data Mining (3 units)
+SFWE 509 – Cloud Computing Principles and Practices (3 units)
+SFWE 510 – Cloud Native Software Engineering (3 units)
+SFWE 511 – Software for Industrial Control Systems (3 units)
+SFWE 512 – Robotics (3 units)
+SFWE 513 – Software Engineering Research Methods (3 units)
+CSE 501 - Operating System Design (3 units)
+ECE 503 - Probability and Random Processes for Engineering Applications (3 units)
+ECE 509 – Cybersecurity Concept, Theory, Practice (3 units)
+ECE 513 – Web Development and the IoT (3 units)
+ECE 523 – Engineering Applications of Machine Learning and Data Analytics (3 units)
+ECE 562 – Computer Architecture and Design (3 units)
+ECE 576A - Engineering of Computer Based Systems (3 units)
+ECE 576B - Embedded System Design and Optimization (3 units)
+ECE 579 – Principles of Artificial Intelligence (3 units)
+SIE 533 – Fundamentals of Data Science for Engineers (3 units)
+SIE 558 – Model Based Systems Engineering (3 units)
+SIE 577 – Introduction to Biomedical Informatics (3 units)
+
+Additional Requirements:
+All elective selections must be approved by an SFWE Faculty Advisor.
+The Master's Thesis Committee must abide by the Graduate College's committee requirements. 
+A minimum of two SFWE eligible faculty members must serve on the committee. The third member may be a Special Member. 
