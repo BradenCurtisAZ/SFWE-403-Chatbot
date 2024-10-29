@@ -77,6 +77,10 @@ The Academic Affairs Office will notify you of the results via your official UA 
 
 If you have any questions about the application process please email engr-advising@email.arizona.edu. Include your name, student ID number and intended major.
 
+The advisors for Software Engineering Undergraduate program are Juliana Lincoln for last names A-J and Christina Hornett for last names K-Z.
+
+The advisor for Software Engineering Graduate program is Liza Soto.
+
 If you would like to delete an existing Engineering major from your current academic program, please email engr-advising@email.arizona.edu using your UA Catmail account. Include your name and student ID number, and specifically state the Engineering degree you wish to delete. If you wish to delete a major outside of Engineering, please contact the major advisor for assistance.
 
 Selecting Desired Major:
