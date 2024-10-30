@@ -164,6 +164,9 @@ Semester Total: 13/15
 // Initialize conversation history with the pre-prompt
 let conversationHistory = prePrompt;
 
+let memory = [];
+let memoryCounter = 0;
+
 // Function to append a message to the chat box
 // Function to append a message to the chat box
 function appendMessage(message, isUser = false) {
@@ -188,7 +191,7 @@ async function sendMessage() {
     userInput.value = '';
 
     // Append the new user message to the conversation history
-    conversationHistory += `User: ${userMessage}\n`;
+    memory[memoryCounter] = `User: ${userMessage}\n`;
 
     try {
         const response = await fetch('https://api.cohere.ai/generate', {
@@ -199,7 +202,7 @@ async function sendMessage() {
             },
             body: JSON.stringify({
                 model: 'command-xlarge-nightly',
-                prompt: conversationHistory + "Bot:",
+                prompt: prePrompt + memory + "Bot:",
                 max_tokens: 500,
                 temperature: 0.8,
                 api_version: '2022-12-06', // Specify a valid API version
@@ -214,7 +217,12 @@ async function sendMessage() {
         appendMessage(botMessage);
 
         // Append the bot's response to the conversation history
-        conversationHistory += `Bot: ${botMessage}\n`;
+        memory[memoryCounter] += `Bot: ${botMessage}\n`;
+
+        memoryCounter += 1;
+    if (memoryCounter > 2) {
+        memoryCounter = 0;
+    }
 
     } catch (error) {
         console.error('Error in API call:', error);
