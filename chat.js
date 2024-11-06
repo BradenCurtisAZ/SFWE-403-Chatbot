@@ -1,5 +1,5 @@
 // Your API key from Cohere
-const API_KEY = '3Z8DYRK8udacxmpkcTCBK8F3h36NoxD3bxhXxzQw';
+const API_KEY = 'p1p0fpBMPtke1gCRNYl9GUO5aEleq9ua3ok5b27a';
 
 // Reference to HTML elements
 const chatBox = document.getElementById('chat-box');
@@ -16,8 +16,10 @@ current software engineering sudents persuing their bachelors, masters, or PhD d
 advisor working in the software engineering department at the University of Arizona.
 Keep your answers brief, but ensure they are informative and respectful.
 If a user asks for something you cannot help with, politely suggest alternative solutions or indicate your limitations.\n\n
+\n\n`;
 
-Use the following information and documents as context when answering questions:
+let admission = `
+Here is information regarding admissions
 
 Link to apply to University of Arizona: https://www.arizona.edu/admissions
 
@@ -44,6 +46,9 @@ Once you have been admitted to the College of Engineering, log in to the NextSte
 -Send final official high school transcripts, when prompted by UA Admissions.
 
 More information regarding the evaluation criteria and application process can be found here: https://engineering.arizona.edu/undergrad-admissions/freshmen
+`
+
+let declaration = `
 
 Here is the declaring an engineering major website, this website only applies to engineering majors attending the UA, non-declared engineering majors attending the UA and UA students outside the college of engineering: https://advising.engr.arizona.edu
 
@@ -88,7 +93,8 @@ NetID Login Required
 *Important note: All students must have a UA cumulative grade point average of at least 2.0 to be eligible to change degree programs or move into the College of Engineering. Strong grades in required math, science and engineering classes are good indicators of success in all of our degree programs. You can be denied even if you meet the GPA requirements for the chosen degree program if your math, science and engineering classes are not sufficiently strong.
 You must be a continuing UA student to use this form. If you are a new, prospective or incoming transfer or freshman student, please visit our new student admission webpage for academic requirements. You must have completed at least 12 UA engineering degree required units to be considered for admission to an Engineering major. Grades of D or E, or repeated use of GRO’s in math/science/engineering classes will diminish your chances for admission.
 Include only grades for classes taken at the University of Arizona. Do not include transfer courses.
-
+`
+let SFWE4YP = `
 Here is the Software Engineering 4 Year Plan document that shows the course breakdown by semester for the first four years under the
 software engineering major. Here are the document contents:
 B.S. in Software Engineering 
@@ -159,83 +165,121 @@ ENGR 498B Interdisciplinary Capstone # 3 # Senior Status
 General Education: Building Connections # 3 # N/A
 UNIV 301 General Education Portfolio # 1 # N/A
 Semester Total: 13/15
-\n\n`;
-
-// Initialize conversation history with the pre-prompt
-let conversationHistory = prePrompt;
+`
 
 let memory = [];
 let memoryCounter = 0;
 
 // Function to append a message to the chat box
-// Function to append a message to the chat box
 function appendMessage(message, isUser = false) {
     const messageElement = document.createElement('div');
-
-    // Replace double asterisks with <strong> tags for bold text
     const formattedMessage = message
-        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') // Replace bold markers
-        .replace(/\n/g, '<br>'); // Replace newlines with <br> tags
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
 
-    messageElement.innerHTML = formattedMessage; // Use innerHTML to allow HTML formatting
+    messageElement.innerHTML = formattedMessage;
     messageElement.classList.add(isUser ? 'user-message' : 'bot-message');
     chatBox.appendChild(messageElement);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
+// Function to get category from Cohere API
+async function getCategory(userMessage) {
+    console.log("getCategory called");
+    const response = await fetch('https://api.cohere.ai/generate', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            model: 'command-xlarge-nightly',
+            prompt: `Classify this following question into one of the following categories: admission, declaration, or SFWE4YP:\n
+            Your response should be a single word (admissions, declaration, or SFWE4YP.\n
+            If the question is regarding admission information to the University or college of engineering respond with "admission".\n
+            If the question is about declaring as an engineering major from someone who attends the university or is alread in the college of engineering, respond with "declaration".\n
+            If the question is regarding classes or coursework in the software engineering major respond with "sfwe4yp".\n
+            Here is the question: "${userMessage}"\nCategory:`,
+            max_tokens: 4,  // Expecting only one word response
+            temperature: 0,
+            api_version: '2022-12-06'
+        })
+    });
 
-// Function to handle sending messages to Cohere API
+    const data = await response.json();
+    //console.log(data.message);  // Log the full data object to see the structure
+    //console.log(data.generations[0].text.trim().toLowerCase());
+    return data.text.trim().toLowerCase();
+}
+
+
+// Function to get final response from Cohere API
+async function getChatbotResponse(fullPrompt) {
+    const response = await fetch('https://api.cohere.ai/generate', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            model: 'command-xlarge-nightly',
+            prompt: fullPrompt,
+            max_tokens: 800,  // Adjust as needed
+            temperature: 0.7,
+            api_version: '2022-12-06'
+        })
+    });
+    const data = await response.json();
+    console.log(data);
+    return data.text.trim();
+}
+
+// Main function to send message and handle chatbot response
 async function sendMessage() {
     const userMessage = userInput.value;
     appendMessage(userMessage, true);
     userInput.value = '';
 
-    // Append the new user message to the conversation history
     memory[memoryCounter] = `User: ${userMessage}\n`;
 
     try {
-        const response = await fetch('https://api.cohere.ai/generate', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                model: 'command-xlarge-nightly',
-                prompt: prePrompt + memory + "Bot:",
-                max_tokens: 500,
-                temperature: 0.8,
-                api_version: '2022-12-06', // Specify a valid API version
-            }),
-        });
-
-        const data = await response.json();
-        console.log('API Response:', data); // Log response for debugging
-        console.log("API Text:" + data.text);
+        // Step 1: Get category
+        const category = await getCategory(userMessage);
         
-        const botMessage = data.text.trim();
-        appendMessage(botMessage);
+        console.log("category: " + category);
+        // Step 2: Select appropriate document based on category
+        let documentText = '';
+        if (category === 'admission') {
+            documentText = admission;
+            console.log("Admission document aopended");
+        } else if (category === 'declaration') {
+            documentText = declaration;
+            console.log("Declaration document appended");
+        } else if (category === 'sfwe4yp') {
+            documentText = SFWE4YP;
+            console.log("SFWE4YP document appended");
+        } else {
+            console.log("category response does not match documents in sendMessage function");
+        }
 
-        // Append the bot's response to the conversation history
-        memory[memoryCounter] += `Bot: ${botMessage}\n`;
+        // Step 3: Formulate full prompt with selected document
+        const fullPrompt = `${prePrompt}\n\n${documentText}\n\nUser: ${userMessage}\nAssistant:`;
 
-        memoryCounter += 1;
-    if (memoryCounter > 2) {
-        memoryCounter = 0;
-    }
+        // Step 4: Get final response
+        const chatbotResponse = await getChatbotResponse(fullPrompt);
+        
+        // Step 5: Append the response to the chat
+        appendMessage(chatbotResponse, false);
+
+        // Update memory and increment memoryCounter
+        memory[memoryCounter] += `Assistant: ${chatbotResponse}\n`;
+        memoryCounter++;
 
     } catch (error) {
-        console.error('Error in API call:', error);
-        appendMessage('Error occurred. Please try again.');
+        console.error('Error fetching from Cohere API:', error);
+        appendMessage('Sorry, I am having trouble answering that question at the moment. Please try again later.', false);
     }
 }
 
-// Add event listener to the button
+// Event listener for send button
 sendButton.addEventListener('click', sendMessage);
-
-// Add event listener to allow 'Enter' key submission
-userInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        sendMessage();
-    }
-});
