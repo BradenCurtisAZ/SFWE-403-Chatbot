@@ -1,0 +1,68 @@
+PHD Program:
+Below is the program requirements for the PHD software engineering degree program as of 11/7/24
+
+Admission Requirements:
+Requirements include a bachelor’s degree from a regionally accredited university in the United States or equivalent UA-recognized international university. A student who does not have a degree equivalent to the university’s BS in a computing-related program but who is admitted may be required to complete additional graduate-level pre-requisite courses prior to enrolling in some graduate courses. This policy applies to students in the MS-thesis and non-thesis options.
+Students must have obtained an undergraduate degree with a minimum 3.0 average grade point or meet the UA Graduate College’s minimum admissions requirements.
+Applicants whose native language is not English must pass an English proficiency test. A description of acceptable tests can be found on the Graduate College website.
+
+Program Curriculum:
+The Doctor of Philosophy in Software Engineering requires 62 units (including the doctoral minor).
+
+This includes: A minimum of 30 units of course work
+    Of the 30 units, 15 units correspond to required courses, and the remaining 15 can be taken from the list of approved electives.
+
+Required Core Courses (15 units):
+SFWE 507 (3) Foundations of Software Engineering
+SFWE 513 (3) Software Engineering Research Methods
+
+Complete 3 courses of additional Core coursework (select 3 from the following list of courses):
+SFWE 502 (4) DevSecOps
+SFWE 503 (3) Software Project Management
+SFWE 504 (3) Software Requirements Analysis & Test
+SFWE 505 (3) Software Architecture & Design
+SFWE 506 (3) Distributed Computing
+
+SFWE Technical graduate electives:
+Important to Note - Any SFWE core courses not used to meet the 12-units of Core coursework requirement can alsobe used as technical electives
+SFWE 501 (3) – SW Assurance (Spring)
+SFWE 508 (3) –Data Mining 
+SFWE 509 (3) – Cloud Computing Principles and Practices
+SFWE 510 (3) – Cloud Native Software Engineering 
+SFWE 511 (3) – Software for Industrial Control Systems 
+SFWE 512 (3) –Robotics 
+SFWE 513 (3) – Software Engineering Research Methods 
+CSE 501 (3) – Operating System Design
+ECE 503 (3) – Probability and Random Processes for Engineering Applications (Fall)
+ECE 509 (3) – Cybersecurity Concept, Theory, Practice (Fall)
+ECE 513 (3) – Web Development and the IoT (Fall)
+ECE 523 (3) – Engineering Applications of Machine Learning and Data Analytics (Spring)
+ECE 562 (3) – Computer Architecture and Design (Spring)
+ECE 576A (3) – Engineering of Computer Based Systems (Fall)
+ECE 576B (3) – Embedded System Design and Optimization (Spring)
+ECE 579 (3) – Principles of Artificial Intelligence (Spring)
+SIE 533 (3) – Fundamentals of Data Science for Engineers (Spring)
+SIE 558 (3) – Model Based Systems Engineering (Spring)
+SIE 577 (3) – Introduction to Biomedical Informatics (Fall, Spring)
+
+Additional Requirements:
+All PhD students must choose at least one minor subject area.  The purpose of choosing a minor is to add breadth to their training.
+A split minor between two departments is also possible.  All selections are subject to the approval of the Graduate Studies Committee.  The minor requires 12 units. Even if the doctoral minor the student selects only requires 9 units, students within this program will still be required to complete 12 minor units. Split minors require 6 units from each area (with approval from each academic department).
+
+Potential Minor Options:
+//need to consult advisor
+
+Guidance on Research Focus Areas and Faculty Advisors:
+Ongoing reserach focus areas involving software engineering are the following: autonomous systems and robotics, communications/coding and informmation theory, computer architecture and cloud/distributed computing, data analytics/informatics and machine learning, embedded systems, and wireless networking, security and systems.
+
+Qualifying Exam Requirements:
+//need to consult graduate handbook
+
+Dissertation Requirements:
+All doctoral dissertations and master’s theses are submitted by the student for archiving upon final approval by the student’s committee.
+In order to graduate in a given term, a student must submit the dissertation or thesis by the published deadline for the term. Note that the dissertation submission deadline typically falls before the end of the term. The student must have defended the dissertation or thesis and gained final committee approval before submitting it for archiving.
+For further information on dissertations consult https://grad.arizona.edu/gsas/dissertations-theses 
+
+Funding Opportunities:
+There is a plethora of funding opportunities available for graduate students such as graduate assitantships and associateships, or scholarships through scholarship universe.
+For more information check out https://grad.arizona.edu/funding 
