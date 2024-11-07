@@ -1,0 +1,78 @@
+Technical Electives:
+Below is a list of approved undergraduate technical electives as of 11/7/24
+For more information on pre-requisites, course description, enrollment restrictions and when they are offered, visit https://arizona.box.com/s/cxehk9alddlpoek2oimyz9syn7l0114h or the course catalog at https://catalog.arizona.edu/courses 
+If you are a UA student, login to Box using your netID and password, otherwise you must log in with a box.com account
+
+Systems and Industrial Engineering (SIE) Eligible Technical Electives:
+SIE 477 Introduction to Biomedical information
+SIE 472 INSuRE
+SIE 471 Systems Cyber Security Engineering
+SIE 458 Model Based Systems Engineering
+SIE 454A The Systems Engineering Process
+SIE 433 Fund of Data Science for Engineers
+SIE 431 Simulation Modeling & Analysis
+SIE 430 Engineering Stats
+SIE 415 Technical Sales & Marketing
+SIE 370 Embedded Computer Systems
+ 
+Software Engineering (SFWE) Eligible Technical Electives:
+SFWE 411 Software for Industrial Control Systems
+SFWE 492 Directed Research
+SFWE 410 Cloud Native (temporarily SIE 496) - coming soon!
+SFWE 409 Principles of Cloud Computing - coming soon!
+
+Linguistics (LING) Eligible Technical Electives:
+LING 438 Computational Linguistics 
+
+Information Science and Arts (ISTA) Eligible Technical Electives:
+ISTA 450 Artifical Intelligence
+ISTA 431 Data Warehousing and Analytics in the Cloud
+ISTA 425 Algorithms for Games - coming soon!
+ISTA 421 Intro to Machine Learning
+ISTA 329 Introduction to Web Design & Development
+ISTA 322 Data Engineering
+ISTA 321 Data Mining and Discovery
+ISTA 320 Applied Data Visualization
+
+Game Design and Development (GAME) Eligible Technical Electives:
+GAME 452 Advanced Game Development
+GAME 426 Game Artifical Intelligence
+GAME 351 Introduction to Game Development with Unity
+
+Information Science and eSociety (ESOC) Eligible Technical Electives:
+ESOC 318 Disruptive Technologies
+
+Entrepreneurship (ENTR) Eligible Technical Electives:
+ENTR 400 Tech Ventures
+
+Electrical and Computer Engineering (ECE) Eligible Technical Electives:
+ECE 479 Artifical Intelligence
+ECE 478 Fund of Computer Networks
+ECE 474A Computer Aided Logic
+ECE 471 Fund Info Theory & Ntwk Security
+ECE 466 Knowledge System Engineering
+ECE 462 Computer Architecture & Design
+ECE 429 Digital Signal Processing
+ECE 413 Web Development & the IoT
+ECE 372A Microprocessor Organization
+ECE 330B Computational Techniques
+ECE 310 Applications of Engineering Math
+
+Cyber Operations (CYBV) Eligible Technical Electives:
+CYBV 435 Cyber Threat Intelligence
+CYBV 400 Active Cyber Defense
+CYBV 385 Introduction to Cyber operations
+
+Computer Science (CSC) Eligible Technical Electives (primairly for CS majors/minors only):
+CSC 477 Intro to Computer Vision
+CSC(V) 372 Comparitive Programming Languages
+CSC 460 Database Design
+CSC 453 Compilers and Systems Software
+CSC 452 Prin Operating Systems
+CSC 444 Data Visualization
+CSC 436 Software Engineering
+CSC 433 Computer Graphics
+CSC 372 Comparitive Programming Languages
+CSC 352 Systems Programming and Unix
+CSC 346 Cloud Computing
+CSC 337 Web Programmming
