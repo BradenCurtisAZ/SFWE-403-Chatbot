@@ -168,7 +168,6 @@ Semester Total: 13/15
 `
 
 
-
 // Function to append a message to the chat box
 function appendMessage(message, isUser = false) {
     const messageElement = document.createElement('div');
@@ -303,3 +302,10 @@ async function sendMessage() {
 
 // Event listener for send button
 sendButton.addEventListener('click', sendMessage);
+userInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        if (userInput.value.trim() !== '') {
+            sendMessage();
+        }
+    }
+});
