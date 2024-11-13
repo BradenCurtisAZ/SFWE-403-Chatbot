@@ -167,8 +167,7 @@ UNIV 301 General Education Portfolio # 1 # N/A
 Semester Total: 13/15
 `
 
-let memory = [];
-let memoryCounter = 0;
+
 
 // Function to append a message to the chat box
 function appendMessage(message, isUser = false) {
@@ -212,6 +211,21 @@ async function getCategory(userMessage) {
     return data.text.trim().toLowerCase();
 }
 
+// Function to show loading dots
+function showLoadingDots() {
+    const loadingDots = document.createElement('div');
+    loadingDots.classList.add('loading-dots');
+    loadingDots.innerHTML = '...';
+    chatBox.appendChild(loadingDots);
+}
+
+// Function to hide loading dots
+function hideLoadingDots() {
+    const loadingDots = chatBox.querySelector('.loading-dots');
+    if (loadingDots) {
+        chatBox.removeChild(loadingDots);
+    }
+}
 
 // Function to get final response from Cohere API
 async function getChatbotResponse(fullPrompt) {
@@ -236,6 +250,8 @@ async function getChatbotResponse(fullPrompt) {
 
 // Main function to send message and handle chatbot response
 async function sendMessage() {
+    let memory = [];
+    let memoryCounter = 0;
     const userMessage = userInput.value;
     appendMessage(userMessage, true);
     userInput.value = '';
@@ -243,6 +259,8 @@ async function sendMessage() {
     memory[memoryCounter] = `User: ${userMessage}\n`;
 
     try {
+        showLoadingDots();  // Show loading spinner
+
         // Step 1: Get category
         const category = await getCategory(userMessage);
         
@@ -251,7 +269,7 @@ async function sendMessage() {
         let documentText = '';
         if (category === 'admission') {
             documentText = admission;
-            console.log("Admission document aopended");
+            console.log("Admission document appended");
         } else if (category === 'declaration') {
             documentText = declaration;
             console.log("Declaration document appended");
@@ -278,6 +296,8 @@ async function sendMessage() {
     } catch (error) {
         console.error('Error fetching from Cohere API:', error);
         appendMessage('Sorry, I am having trouble answering that question at the moment. Please try again later.', false);
+    } finally {
+        hideLoadingDots();  // Hide loading dots
     }
 }
 

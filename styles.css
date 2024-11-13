@@ -94,3 +94,29 @@ body {
     word-wrap: break-word;
     width: fit-content;
 }
+
+.loading-dots {
+    font-size: 24px;
+    background-color: #e0e0e0; /* Light grey background */
+    color: black; /* Black text */
+    padding: 10px;
+    margin: 0px 0;
+    border-radius: 10px;
+    align-self: left; /* Aligns the message to the left */
+    max-width: 70%;
+    word-wrap: break-word;
+    width: fit-content;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        color: black;
+    }
+    50% {
+        color: #e0e0e0;
+    }
+    100% {
+        color: black;
+    }
+}
