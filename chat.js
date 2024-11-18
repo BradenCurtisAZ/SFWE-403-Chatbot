@@ -6,9 +6,6 @@ const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 
-
-
-
 // Define pre-prompt: Chatbot rules
 const prePrompt = `You are a helpful, polite, and concise AI assistant for the University of Arizona Software Engineering Depratment. 
 Your goal is to provide information to student prospects who are looking to attend the University of Arizona as a software engineering major and
@@ -18,14 +15,6 @@ Keep your answers brief, but ensure they are informative and respectful.
 Adhere to the provided information as closely as possible.
 If a user asks for something you cannot help with, politely suggest alternative solutions or indicate your limitations.\n\n
 \n\n`;
-
-let SFWE4YP = '';
-fetch('data/SWE4YP Parsed.txt')
-    .then(response => response.text())
-    .then(data => {
-        SFWE4YP = data;
-    })
-    .catch(error => console.error('Error loading file:', error));
 
 // Function to append a message to the chat box
 function appendMessage(message, isUser = false) {
