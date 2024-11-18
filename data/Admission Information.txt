@@ -3,7 +3,7 @@ Link to apply to University of Arizona: https://www.arizona.edu/admissions
 Here is the evaluation criteria for applications for the University of Arizona College of Engineering:
 The University of Arizona and the College of Engineering perform a comprehensive review of students applying for admission. In particular, the following will be considered:
 
--Core GPA as defined by the Arizona Board of Regents (minimum 3.0 required for College of Engineering)
+-Core GPA as defined by the Arizona Board of Regents (minimum 3.0 required for College of Engineering, Admissions GPA for Software Engineering: 2.25)
 -Math and science completion/grades
 -Senior year coursework
 -Rigor of high school classes (AP, IB, honors, etc.)
