@@ -6,15 +6,13 @@ const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 
-
-
-
 // Define pre-prompt: Chatbot rules
 const prePrompt = `You are a helpful, polite, and concise AI assistant for the University of Arizona Software Engineering Depratment. 
 Your goal is to provide information to student prospects who are looking to attend the University of Arizona as a software engineering major and
 current software engineering sudents persuing their bachelors, masters, or PhD degree. Answer questions as if you are an acedemic
 advisor working in the software engineering department at the University of Arizona.
 Keep your answers brief, but ensure they are informative and respectful.
+Adhere to the provided information as closely as possible.
 If a user asks for something you cannot help with, politely suggest alternative solutions or indicate your limitations.\n\n
 \n\n`;
 
@@ -192,13 +190,17 @@ async function getCategory(userMessage) {
         },
         body: JSON.stringify({
             model: 'command-xlarge-nightly',
-            prompt: `Classify this following question into one of the following categories: admission, declaration, or SFWE4YP:\n
-            Your response should be a single word (admissions, declaration, or SFWE4YP.\n
-            If the question is regarding admission information to the University or college of engineering respond with "admission".\n
-            If the question is about declaring as an engineering major from someone who attends the university or is alread in the college of engineering, respond with "declaration".\n
-            If the question is regarding classes or coursework in the software engineering major respond with "sfwe4yp".\n
+            prompt: `Classify this following question into one of the following categories: "Transfer_Credit", "Admission_Information", "BS_Program", 
+                "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives" or "SFWE4YP":\n
+            Your response should be only the full name of the category.\n
+            For example, if the question is regarding admission information to the University or college of engineering respond with "Admission_Information".\n
+            If the question is about declaring as an engineering major from someone who attends the university or is already in the college of engineering, respond with "BS_Program".\n
+            If the question is regarding classes or coursework in the software engineering major respond with "SFWE4YP".\n
+            If the question is about transfer credit information respond with "Transfer_Credit".\n
+            If the question is about the MS program respond with "MS_Program".\n
+            If the question is about the PHD program respond with "PHD_Program".\n
             Here is the question: "${userMessage}"\nCategory:`,
-            max_tokens: 4,  // Expecting only one word response
+            max_tokens: 8,  // Expecting only one word response
             temperature: 0,
             api_version: '2022-12-06'
         })
@@ -262,22 +264,18 @@ async function sendMessage() {
 
         // Step 1: Get category
         const category = await getCategory(userMessage);
+
+        
         
         console.log("category: " + category);
         // Step 2: Select appropriate document based on category
         let documentText = '';
-        if (category === 'admission') {
-            documentText = admission;
-            console.log("Admission document appended");
-        } else if (category === 'declaration') {
-            documentText = declaration;
-            console.log("Declaration document appended");
-        } else if (category === 'sfwe4yp') {
-            documentText = SFWE4YP;
-            console.log("SFWE4YP document appended");
-        } else {
-            console.log("category response does not match documents in sendMessage function");
-        }
+        fetch(`data/${category}.txt`)
+            .then(response => response.text())
+            .then(data => {
+                documentText = data;
+            })
+        .catch(error => console.error('Error loading file:', error));
 
         // Step 3: Formulate full prompt with selected document
         const fullPrompt = `${prePrompt}\n\n${documentText}\n\nUser: ${userMessage}\nAssistant:`;
