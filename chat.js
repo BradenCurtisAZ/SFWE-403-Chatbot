@@ -166,7 +166,34 @@ Semester Total: 13/15
 `;
 
 let research_info = `
-Research Opportunities and Information for Software Engineering Majors at the University of Arizona:
+Research Opportunities for Software Engineering Majors at the University of Arizona:
+
+Local to the U of A:
+The ECE Department and School of Information (aka iSchool) frequently host collaborative research projects in software engineering, especially in areas like AI, ML, and software reliability.
+There are various undergraduate research assistant positions and summer research programs that allow students to participate in cutting-edge research projects.
+The NSF Center for Cloud and Autonomic Computing: Focuses on software engineering research in areas such as cloud computing, autonomic systems, and cyber-physical systems.
+BIO5 Institute: Offers interdisciplinary projects where software engineering students can contribute to biomedical software systems, enhancing skills in medical applications of software engineering.
+Capstone courses, such as Senior Design, provide opportunities for students to work on real-world research problems in partnership with companies and research labs.
+Engaging with professors in the ECE or iSchool departments can lead to hands-on research. Professors often seek students for ongoing research in fields like software testing, formal verification, and human-computer interaction.
+
+Global Opportunities:
+GitHub offers global software engineering research opportunities through open-source projects. Collaborating with international teams allows students to contribute to large-scale projects and gain research experience.
+IEEE Software Engineering Conferences: Attending conferences such as ICSE and ASE provides opportunities to network, present research, and explore brand-new topics in software development.
+Global tech companies (both big ones like Google, Microsoft, and IBM and smaller companies) offer research internships for students, where they can work on emerging fields such as AI, blockchain, and cybersecurity in software engineering.
+Programs like NSF Research Experiences for Undergraduates offer software engineering-focused research positions in labs across the U.S. and globally, allowing students to contribute to important research projects in areas such as ML or data.
+Research in quantum computing, autonomous systems, and IoT software platforms are rapidly growing areas in software engineering. Many universities globally are looking for research assistants and contributors.
+
+Typical Research Topics:
+Software Testing and Verification: Developing methods to ensure software behaves as expected through testing, verification, and validation techniques.
+Agile Software Development: How to improve agile methodologies and adapt agile processes for large-scale software development.
+Cybersecurity and Secure Software Development: How to integrate security into every phase of software development, focusing on secure coding, threat modeling, and vulnerability analysis.
+ML in Software: Applying ML algorithms to software engineering tasks like bug prediction, software optimization, and automated code generation.
+DevOps and Continuous Integration: Researching best practices for integrating development and operations, as well as continuous delivery and deployment practices.
+Autonomic Computing and Self-Adaptive Systems: Developing systems that can automatically configure, heal, optimize, and protect themselves.
+GUI and UX Design: What ways can we improve software interfaces and user experiences utilizing design principles, testing, and user feedback.
+Cloud Computing: Building reliable, scalable, and efficient cloud computing platforms and services, often focusing on distributed systems, fault tolerance, and resource management.
+Quantum Software Engineering: How software engineering principles can be applied to quantum computing environments, like new algorithms and debugging methods for quantum software.
+Software Metrics and Analytics: Analyzing software development data (codebases, bugs, commit histories, gits) to extract metrics and insights for improving development processes.
 
 Ongoing research at the University of Arizona involving software engineering includes:
 Autonomous systems and robotics
@@ -175,6 +202,12 @@ Computer architecture and cloud/distributed computing
 Data analytics, informatics and machine learning
 Embedded systems
 Wireless networking, security and systems
+
+SFWE Faculty Conducting Research:
+Thomas Cerny - His research focus is Software Engineering, Static Analysis, and Cloud-computing applications.
+Sen He - Sen He’s research interests include the areas of Cloud Computing, Edge, Software Engineering (Formal Methods), Performance Engineering (Statistic/AI integrated Software Testing), and Computer Vision. More specifically, his research to date has focused on developing performance testing methodologies to obtain highly accurate cloud performance results while also maintaining low testing costs.
+Soheil Salehi - Salehi's technical research interests are hardware and AI-enabled security in IoT, energy-efficient and intelligent signal conversion and processing in IoT, neuromorphic and biologically-inspired AI hardware, emerging spin-based devices, reconfigurable and adaptive computer architectures, and low-power and reliability-aware VLSI circuits.
+Pratik Satam - Satam performs research in Cybersecurity with a focus on Network Security, Computer Security, Cyber Physical Systems Security, Internet of Things (IoT) Security.
 
 There are also opportunities with the Systems & Industrial Engineering (SIE) department.
 Partnering with the Arizona Department of Transportation, renowned researchers in SIE are developing 
@@ -227,6 +260,22 @@ architects and developers, project managers, network engineers, and business own
 Software engineers are in high demand across industries with employers such as Google, 
 Amazon, Microsoft, Snap Inc., Medtronic, Johnson & Johnson, Raytheon, General Dynamics, 
 Honeywell and Wells Fargo. The list, at home and abroad, is limitless.
+
+More specifically, career opportunities will include, but not be limited to:
+Social Media Platforms: Develop and maintain user interfaces, recommendation algorithms, and backend systems. Salaries can vary widely depending on the platform, with engineers at major platforms like Meta or Twitter earning between $140,000 and $200,000 annually.
+Cloud Computing: Build and maintain cloud infrastructure (AWS, Azure, Google Cloud). On average, software engineers in this profession earn about $113,000 annually, with certain roles like AWS engineers earning as much as $140,000​.
+Embedded Systems: Develop software for specialized hardware applications. This could include medical devices or car control systems. Salaries range from $85,000 to $120,000.
+Artificial Intelligence (AI): Develop intelligent algorithms, including for ML or NLP. Salaries range from $120,000 to $160,000. But salaries can go up to $200,000+ for AI researchers in high-demand areas like LLM.
+Automation: Work on systems that minimize human intervention in tasks. This makes processes more efficient and reduces the amount of time and resources required to complete repetitive tasks. This salary range is lower, in the $90,000 to $130,000 range, very dependent on what is being automated.
+Avionics: Work on flight control systems, navigation for aircraft, and airport systems. The average salary for this profession is $135,000, but can go up to $200,000+ for experienced engineers at companies like Boeing/SpaceX.
+Vehicle Automation: Developing autonomous driving systems. The salary range for this job is quite wide, from $105,000 to $170,000. Tesla and Waymo are currently the leading companies in this field.
+Cybersecurity: Protect systems from malicious attacks and breaches. Salaries typically go from $110,000 to $150,000 with specialists (usually in cloud security) able to make slightly more.
+Machine Learning (ML): Create algorithms that allow systems to learn from data. Average salary for this field is $124,000. There are many opportunities in diverse sectors for this technology.
+Medical Applications: Develop health-related technologies, such as software for diagnostic machines, patient data management, or electronic health record systems. Salaries here range from $95,000 to $130,000 annually.
+Full Stack Development: Work on both frontend and backend development, and usually both to build complete web applications. Salaries can vary significantly depending on what you’re developing, but can range from $92,000 to $165,000.
+Data Engineering: Building data pipelines and infrastructure. Expertise in cloud-based data systems is considered more valuable. Salaries start at $96,000 but can increase to $140,000+ in more advanced data systems.
+Game Development: Create software for video games. Salaries typically range from $85,000 to $120,000, though again there is a great level of variance depending on the studio and location.
+Blockchain Development: Work on decentralized applications and systems like crypto. The average salary is $135,000; but the salaries in this field are increasing as blockchain technology grows. It currently ranges from $120,000 to $165,000. 
 `;
 
 // Function to append a message to the chat box

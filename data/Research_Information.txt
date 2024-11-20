@@ -1,39 +1,4 @@
-Research Information for Software Engineering Majors at the University of Arizona:
-
-Ongoing research at the University of Arizona involving software engineering includes:
-Autonomous systems and robotics
-Communications, coding and information theory
-Computer architecture and cloud/distributed computing
-Data analytics, informatics and machine learning
-Embedded systems
-Wireless networking, security and systems
-
-There are also opportunities with the Systems & Industrial Engineering (SIE) department.
-Partnering with the Arizona Department of Transportation, renowned researchers in SIE are developing 
-technology for connected vehicles and making emergency response quicker. Working closely with 
-the Department of Homeland Security and the National Center for Border Security and Immigration, 
-they are creating an autonomous surveillance system to help secure the U.S.-Mexico border. 
-And, cooperating with Air Force Research Laboratory and an international alliance, they are 
-developing a cyberinfrastructure to monitor satellites and manage traffic in space.
-
-SIE's focus areas include:
-Data Analytics, Informatics and Machine Learning
-Energy, Water, Environment and Sustainability
-Health Care Systems
-Human Factors and Sociotechnical Systems
-Optimization
-Smart Transportation and Manufacturing Logistics
-Software Engineering
-Space, Defense and Security
-
-Much of SIE’s transportation engineering research takes place at the UA’s interdisciplinary 
-Transportation Research Institute, which addresses the mobility, safety and environmental 
-challenges of a rapidly evolving transportation ecosystem.
-Further facilitating SIE discovery are a number of multidisciplinary labs, including the 
-Space Systems Engineering Lab, which is supporting to the OSIRIS-REx Asteroid Sample Return 
-Mission in the Lunar & Planetary Laboratory.
-
-Specific Research Opportunities for software engineering students:
+Research Opportunities for Software Engineering Majors at the University of Arizona:
 
 Local to the U of A:
 The ECE Department and School of Information (aka iSchool) frequently host collaborative research projects in software engineering, especially in areas like AI, ML, and software reliability.
@@ -62,8 +27,41 @@ Cloud Computing: Building reliable, scalable, and efficient cloud computing plat
 Quantum Software Engineering: How software engineering principles can be applied to quantum computing environments, like new algorithms and debugging methods for quantum software.
 Software Metrics and Analytics: Analyzing software development data (codebases, bugs, commit histories, gits) to extract metrics and insights for improving development processes.
 
+Ongoing research at the University of Arizona involving software engineering includes:
+Autonomous systems and robotics
+Communications, coding and information theory
+Computer architecture and cloud/distributed computing
+Data analytics, informatics and machine learning
+Embedded systems
+Wireless networking, security and systems
+
 SFWE Faculty Conducting Research:
 Thomas Cerny - His research focus is Software Engineering, Static Analysis, and Cloud-computing applications.
 Sen He - Sen He’s research interests include the areas of Cloud Computing, Edge, Software Engineering (Formal Methods), Performance Engineering (Statistic/AI integrated Software Testing), and Computer Vision. More specifically, his research to date has focused on developing performance testing methodologies to obtain highly accurate cloud performance results while also maintaining low testing costs.
 Soheil Salehi - Salehi's technical research interests are hardware and AI-enabled security in IoT, energy-efficient and intelligent signal conversion and processing in IoT, neuromorphic and biologically-inspired AI hardware, emerging spin-based devices, reconfigurable and adaptive computer architectures, and low-power and reliability-aware VLSI circuits.
 Pratik Satam - Satam performs research in Cybersecurity with a focus on Network Security, Computer Security, Cyber Physical Systems Security, Internet of Things (IoT) Security.
+
+There are also opportunities with the Systems & Industrial Engineering (SIE) department.
+Partnering with the Arizona Department of Transportation, renowned researchers in SIE are developing 
+technology for connected vehicles and making emergency response quicker. Working closely with 
+the Department of Homeland Security and the National Center for Border Security and Immigration, 
+they are creating an autonomous surveillance system to help secure the U.S.-Mexico border. 
+And, cooperating with Air Force Research Laboratory and an international alliance, they are 
+developing a cyberinfrastructure to monitor satellites and manage traffic in space.
+
+SIE's focus areas include:
+Data Analytics, Informatics and Machine Learning
+Energy, Water, Environment and Sustainability
+Health Care Systems
+Human Factors and Sociotechnical Systems
+Optimization
+Smart Transportation and Manufacturing Logistics
+Software Engineering
+Space, Defense and Security
+
+Much of SIE’s transportation engineering research takes place at the UA’s interdisciplinary 
+Transportation Research Institute, which addresses the mobility, safety and environmental 
+challenges of a rapidly evolving transportation ecosystem.
+Further facilitating SIE discovery are a number of multidisciplinary labs, including the 
+Space Systems Engineering Lab, which is supporting to the OSIRIS-REx Asteroid Sample Return 
+Mission in the Lunar & Planetary Laboratory.
