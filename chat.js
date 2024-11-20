@@ -44,7 +44,7 @@ Once you have been admitted to the College of Engineering, log in to the NextSte
 -Send final official high school transcripts, when prompted by UA Admissions.
 
 More information regarding the evaluation criteria and application process can be found here: https://engineering.arizona.edu/undergrad-admissions/freshmen
-`
+`;
 
 let declaration = `
 
@@ -91,7 +91,7 @@ NetID Login Required
 *Important note: All students must have a UA cumulative grade point average of at least 2.0 to be eligible to change degree programs or move into the College of Engineering. Strong grades in required math, science and engineering classes are good indicators of success in all of our degree programs. You can be denied even if you meet the GPA requirements for the chosen degree program if your math, science and engineering classes are not sufficiently strong.
 You must be a continuing UA student to use this form. If you are a new, prospective or incoming transfer or freshman student, please visit our new student admission webpage for academic requirements. You must have completed at least 12 UA engineering degree required units to be considered for admission to an Engineering major. Grades of D or E, or repeated use of GRO’s in math/science/engineering classes will diminish your chances for admission.
 Include only grades for classes taken at the University of Arizona. Do not include transfer courses.
-`
+`;
 let SFWE4YP = `
 Here is the Software Engineering 4 Year Plan document that shows the course breakdown by semester for the first four years under the
 software engineering major. Here are the document contents:
@@ -163,8 +163,71 @@ ENGR 498B Interdisciplinary Capstone # 3 # Senior Status
 General Education: Building Connections # 3 # N/A
 UNIV 301 General Education Portfolio # 1 # N/A
 Semester Total: 13/15
-`
+`;
 
+let research_info = `
+Research Opportunities and Information for Software Engineering Majors at the University of Arizona:
+
+Ongoing research at the University of Arizona involving software engineering includes:
+Autonomous systems and robotics
+Communications, coding and information theory
+Computer architecture and cloud/distributed computing
+Data analytics, informatics and machine learning
+Embedded systems
+Wireless networking, security and systems
+
+There are also opportunities with the Systems & Industrial Engineering (SIE) department.
+Partnering with the Arizona Department of Transportation, renowned researchers in SIE are developing 
+technology for connected vehicles and making emergency response quicker. Working closely with 
+the Department of Homeland Security and the National Center for Border Security and Immigration, 
+they are creating an autonomous surveillance system to help secure the U.S.-Mexico border. 
+And, cooperating with Air Force Research Laboratory and an international alliance, they are 
+developing a cyberinfrastructure to monitor satellites and manage traffic in space.
+
+SIE's focus areas include:
+Data Analytics, Informatics and Machine Learning
+Energy, Water, Environment and Sustainability
+Health Care Systems
+Human Factors and Sociotechnical Systems
+Optimization
+Smart Transportation and Manufacturing Logistics
+Software Engineering
+Space, Defense and Security
+
+Much of SIE’s transportation engineering research takes place at the UA’s interdisciplinary 
+Transportation Research Institute, which addresses the mobility, safety and environmental 
+challenges of a rapidly evolving transportation ecosystem.
+Further facilitating SIE discovery are a number of multidisciplinary labs, including the 
+Space Systems Engineering Lab, which is supporting to the OSIRIS-REx Asteroid Sample Return 
+Mission in the Lunar & Planetary Laboratory.
+`;
+
+let career_info = `
+Career Opportunities and Information for Software Engineering Majors at the University of Arizona:
+
+Software engineers build the technological infrastructure for our increasingly connected 
+world. They are in high demand to solve complex engineering problems across industries 
+and government.
+
+They work in areas such as:
+aerospace and space exploration
+automation and connectivity
+biomedical modeling and devices
+data, computing and networking
+human and intelligent systems
+natural and fabricated environments
+
+With an interdisciplinary curriculum that covers large-scale product development and 
+incorporates intensive real-world design, the University of Arizona BS in software 
+engineering prepares students for some of the most coveted technology jobs in the world.
+
+Software engineering graduates work in corporate and government settings as well as 
+in research and as independent consultants. They become software and application 
+architects and developers, project managers, network engineers, and business owners. 
+Software engineers are in high demand across industries with employers such as Google, 
+Amazon, Microsoft, Snap Inc., Medtronic, Johnson & Johnson, Raytheon, General Dynamics, 
+Honeywell and Wells Fargo. The list, at home and abroad, is limitless.
+`;
 
 // Function to append a message to the chat box
 function appendMessage(message, isUser = false) {
@@ -181,17 +244,17 @@ function appendMessage(message, isUser = false) {
 
 // Function to get category from Cohere API
 async function getCategory(userMessage) {
-    console.log("getCategory called");
+    console.log('getCategory called');
     const response = await fetch('https://api.cohere.ai/generate', {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${API_KEY}`,
-            'Content-Type': 'application/json'
+            Authorization: `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             model: 'command-xlarge-nightly',
             prompt: `Classify this following question into one of the following categories: "Transfer_Credit", "Admission_Information", "BS_Program", 
-                "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives" or "SFWE4YP":\n
+                "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives", "SFWE4YP", "Career_Opportunities", or "Research_Opportunities":\n
             Your response should be only the full name of the category.\n
             For example, if the question is regarding admission information to the University or college of engineering respond with "Admission_Information".\n
             If the question is about declaring as an engineering major from someone who attends the university or is already in the college of engineering, respond with "BS_Program".\n
@@ -199,11 +262,13 @@ async function getCategory(userMessage) {
             If the question is about transfer credit information respond with "Transfer_Credit".\n
             If the question is about the MS program respond with "MS_Program".\n
             If the question is about the PHD program respond with "PHD_Program".\n
+            If the question is about career opportunities for graduates of the software engineering BS, respond with "Career_Opportunities".\n
+            If the question is about research opportunities, respond with "Research_Opportunities".\n
             Here is the question: "${userMessage}"\nCategory:`,
-            max_tokens: 8,  // Expecting only one word response
+            max_tokens: 8, // Expecting only one word response
             temperature: 0,
-            api_version: '2022-12-06'
-        })
+            api_version: '2022-12-06',
+        }),
     });
 
     const data = await response.json();
@@ -233,16 +298,16 @@ async function getChatbotResponse(fullPrompt) {
     const response = await fetch('https://api.cohere.ai/generate', {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${API_KEY}`,
-            'Content-Type': 'application/json'
+            Authorization: `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             model: 'command-xlarge-nightly',
             prompt: fullPrompt,
-            max_tokens: 800,  // Adjust as needed
+            max_tokens: 800, // Adjust as needed
             temperature: 0.7,
-            api_version: '2022-12-06'
-        })
+            api_version: '2022-12-06',
+        }),
     });
     const data = await response.json();
     console.log(data);
@@ -260,41 +325,41 @@ async function sendMessage() {
     memory[memoryCounter] = `User: ${userMessage}\n`;
 
     try {
-        showLoadingDots();  // Show loading spinner
+        showLoadingDots(); // Show loading spinner
 
         // Step 1: Get category
         const category = await getCategory(userMessage);
 
-        
-        
-        console.log("category: " + category);
+        console.log('category: ' + category);
         // Step 2: Select appropriate document based on category
         let documentText = '';
         fetch(`data/${category}.txt`)
-            .then(response => response.text())
-            .then(data => {
+            .then((response) => response.text())
+            .then((data) => {
                 documentText = data;
             })
-        .catch(error => console.error('Error loading file:', error));
+            .catch((error) => console.error('Error loading file:', error));
 
         // Step 3: Formulate full prompt with selected document
         const fullPrompt = `${prePrompt}\n\n${documentText}\n\nUser: ${userMessage}\nAssistant:`;
 
         // Step 4: Get final response
         const chatbotResponse = await getChatbotResponse(fullPrompt);
-        
+
         // Step 5: Append the response to the chat
         appendMessage(chatbotResponse, false);
 
         // Update memory and increment memoryCounter
         memory[memoryCounter] += `Assistant: ${chatbotResponse}\n`;
         memoryCounter++;
-
     } catch (error) {
         console.error('Error fetching from Cohere API:', error);
-        appendMessage('Sorry, I am having trouble answering that question at the moment. Please try again later.', false);
+        appendMessage(
+            'Sorry, I am having trouble answering that question at the moment. Please try again later.',
+            false
+        );
     } finally {
-        hideLoadingDots();  // Hide loading dots
+        hideLoadingDots(); // Hide loading dots
     }
 }
 
