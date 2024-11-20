@@ -22,3 +22,19 @@ architects and developers, project managers, network engineers, and business own
 Software engineers are in high demand across industries with employers such as Google, 
 Amazon, Microsoft, Snap Inc., Medtronic, Johnson & Johnson, Raytheon, General Dynamics, 
 Honeywell and Wells Fargo. The list, at home and abroad, is limitless.
+
+More specifically, career opportunities will include, but not be limited to:
+Social Media Platforms: Develop and maintain user interfaces, recommendation algorithms, and backend systems. Salaries can vary widely depending on the platform, with engineers at major platforms like Meta or Twitter earning between $140,000 and $200,000 annually.
+Cloud Computing: Build and maintain cloud infrastructure (AWS, Azure, Google Cloud). On average, software engineers in this profession earn about $113,000 annually, with certain roles like AWS engineers earning as much as $140,000​.
+Embedded Systems: Develop software for specialized hardware applications. This could include medical devices or car control systems. Salaries range from $85,000 to $120,000.
+Artificial Intelligence (AI): Develop intelligent algorithms, including for ML or NLP. Salaries range from $120,000 to $160,000. But salaries can go up to $200,000+ for AI researchers in high-demand areas like LLM.
+Automation: Work on systems that minimize human intervention in tasks. This makes processes more efficient and reduces the amount of time and resources required to complete repetitive tasks. This salary range is lower, in the $90,000 to $130,000 range, very dependent on what is being automated.
+Avionics: Work on flight control systems, navigation for aircraft, and airport systems. The average salary for this profession is $135,000, but can go up to $200,000+ for experienced engineers at companies like Boeing/SpaceX.
+Vehicle Automation: Developing autonomous driving systems. The salary range for this job is quite wide, from $105,000 to $170,000. Tesla and Waymo are currently the leading companies in this field.
+Cybersecurity: Protect systems from malicious attacks and breaches. Salaries typically go from $110,000 to $150,000 with specialists (usually in cloud security) able to make slightly more.
+Machine Learning (ML): Create algorithms that allow systems to learn from data. Average salary for this field is $124,000. There are many opportunities in diverse sectors for this technology.
+Medical Applications: Develop health-related technologies, such as software for diagnostic machines, patient data management, or electronic health record systems. Salaries here range from $95,000 to $130,000 annually.
+Full Stack Development: Work on both frontend and backend development, and usually both to build complete web applications. Salaries can vary significantly depending on what you’re developing, but can range from $92,000 to $165,000.
+Data Engineering: Building data pipelines and infrastructure. Expertise in cloud-based data systems is considered more valuable. Salaries start at $96,000 but can increase to $140,000+ in more advanced data systems.
+Game Development: Create software for video games. Salaries typically range from $85,000 to $120,000, though again there is a great level of variance depending on the studio and location.
+Blockchain Development: Work on decentralized applications and systems like crypto. The average salary is $135,000; but the salaries in this field are increasing as blockchain technology grows. It currently ranges from $120,000 to $165,000. 

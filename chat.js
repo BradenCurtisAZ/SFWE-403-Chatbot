@@ -254,7 +254,7 @@ async function getCategory(userMessage) {
         body: JSON.stringify({
             model: 'command-xlarge-nightly',
             prompt: `Classify this following question into one of the following categories: "Transfer_Credit", "Admission_Information", "BS_Program", 
-                "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives", "SFWE4YP", "Career_Opportunities", or "Research_Opportunities":\n
+                "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives", "SFWE4YP", "Career_Opportunities", or "Research_Information":\n
             Your response should be only the full name of the category.\n
             For example, if the question is regarding admission information to the University or college of engineering respond with "Admission_Information".\n
             If the question is about declaring as an engineering major from someone who attends the university or is already in the college of engineering, respond with "BS_Program".\n
@@ -263,7 +263,7 @@ async function getCategory(userMessage) {
             If the question is about the MS program respond with "MS_Program".\n
             If the question is about the PHD program respond with "PHD_Program".\n
             If the question is about career opportunities for graduates of the software engineering BS, respond with "Career_Opportunities".\n
-            If the question is about research opportunities, respond with "Research_Opportunities".\n
+            If the question is about research opportunities, respond with "Research_Information".\n
             Here is the question: "${userMessage}"\nCategory:`,
             max_tokens: 8, // Expecting only one word response
             temperature: 0,
