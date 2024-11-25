@@ -102,7 +102,10 @@ def main():
     if not cohere_api_key:
         raise ValueError("Please set the COHERE_API_KEY environment variable")
 
-    chatbot = RAGChatbot(cohere_api_key)
+    docs_dir = "./documents"
+    if not os.path.exists(docs_dir):
+        os.makedirs(docs_dir)
+    chatbot = RAGChatbot(cohere_api_key, docs_dir=docs_dir)
 
     # Make sure you have a documents directory with some .txt files
     chatbot.initialize()

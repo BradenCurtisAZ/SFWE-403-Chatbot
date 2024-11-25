@@ -11,6 +11,13 @@ Below is the advised sequence of courses for this degree program on Main Campus 
 Here is the syntax for the courses within this document:
 Course Number and Title  # Units # Prerequisites/Enrollment Requirements 
 
+Freshman year details are 1st semester and 2nd semester.
+Sophomore year details are 3rd semester and 4th semester.
+Junior year details are 5th semester and 6th semester.
+Senior year details are 7th semester and 8th semester.
+
+When asked about what courses to take, list the each course with their description.
+
 Courses by Semester:
 Here are the courses for each semester:
 1st Semester:
