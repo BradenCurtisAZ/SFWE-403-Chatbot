@@ -52,6 +52,19 @@ ENGL 102, 108 , or 109H: English Composition: 3 units
 Admissions GPA:
 Software Engineering: 2.25
 
+Advisors:
+    First-Year Advisors:
+        Richard Casillas
+        Phil Medlock
+        Rani Metz
+            engr-advising@arizona.edu
+    Software Engineering Advisors:
+        Juliana Lincoln
+            julianalincoln@arizona.edu
+        Christina Hornett
+            chornett@arizona.edu
+    For more information on advisors in the College of Engineering, go to https://engineering.arizona.edu/undergrad-services/advising
+
 Starting the Application Process:
 Once you have met the admissions requirements listed above, click on the major link below to begin the change of major application process.
 

@@ -5,16 +5,18 @@ const API_KEY = 'p1p0fpBMPtke1gCRNYl9GUO5aEleq9ua3ok5b27a';
 const chatBox = document.getElementById('chat-box');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
+let memory = [];
+let memoryCounter = 0; // Counter to keep track of memory index
 
 // Define pre-prompt: Chatbot rules
 const prePrompt = `You are a helpful, polite, and concise AI assistant for the University of Arizona Software Engineering Depratment. 
-Your goal is to provide information to student prospects who are looking to attend the University of Arizona as a software engineering major and
-current software engineering sudents persuing their bachelors, masters, or PhD degree. Answer questions as if you are an acedemic
-advisor working in the software engineering department at the University of Arizona.
-Keep your answers brief, but ensure they are informative and respectful.
-Adhere to the provided information as closely as possible.
-Any reference to SFWE is the Software Engineering major at the University of Arizona.
-If a user asks for something you cannot help with, politely suggest alternative solutions or indicate your limitations.
+Your goal is to provide information to student prospects who are looking to attend the University of Arizona as a software engineering major and 
+current software engineering sudents persuing their bachelors, masters, or PhD degree. Answer questions as if you are an acedemic 
+advisor working in the software engineering department at the University of Arizona. 
+Adhere to the provided information as closely as possible. 
+Summarize information if a great portion of the data is irrelevant to the prompt.
+Any reference to SFWE is the Software Engineering major at the University of Arizona. 
+If a user asks for something you cannot help with, politely suggest alternative solutions or indicate your limitations. 
 If you cannot find the answer in the used dataset, do not answer under any circumstance.\n\n
 \n\n`;
 
@@ -42,20 +44,21 @@ async function getCategory(userMessage) {
         },
         body: JSON.stringify({
             model: 'command-xlarge-nightly',
-            prompt: `Classify this following question into one of the following categories: "Transfer_Credit", "Admission_Information", "BS_Program", 
+            prompt: `Classify this following prompt into one of the following categories: "Transfer_Credit", "Admission_Information", "BS_Program", 
                 "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives", "SFWE4YP", "Career_Opportunities", or "Research_Information":\n
             Your response should be only the full name of the category.\n
-            For example, if the question is regarding admission information to the University or college of engineering respond with "Admission_Information".\n
-            If the question is about declaring as an engineering major from someone who attends the university or is already in the college of engineering, respond with "BS_Program".\n
-            If the question is regarding classes or coursework in the software engineering major respond with "SFWE4YP".\n
-            If the question is about transfer credit information respond with "Transfer_Credit".\n
-            If the question is about the MS program respond with "MS_Program".\n
-            If the question is about the PHD program respond with "PHD_Program".\n
-            If the question is about career opportunities for graduates of the software engineering BS, respond with "Career_Opportunities".\n
-            If the question is about research opportunities, respond with "Research_Information".\n
-            Here is the question and context: "${userMessage}"\nCategory:`,
-            max_tokens: 8, // Expecting only one word response
-            temperature: 0,
+            For example, if the question is regarding admission information or about the people to talk to such as advisors "Admission_Information".\n
+            If the prompt is about declaring as an engineering major from someone who attends the university or is already in the college of engineering, respond with "BS_Program".\n
+            If the prompt is regarding classes or courses in the software engineering major program or for a specific year or semester, respond with "SFWE4YP".\n
+            If the prompt is about transfer credit information, respond with "Transfer_Credit".\n
+            If the prompt is about the MS or Master's Degree program respond with "MS_Program".\n
+            If the prompt is about the PHD or Doctorate program respond with "PHD_Program".\n
+            If the prompt is about career or job opportunities after graduation, respond with "Career_Opportunities".\n
+            If the prompt is about research opportunities, respond with "Research_Information".\n
+            If this is the second time you are asked to answer a question according to the context, use a different category than the one you used before.\n
+            Here is the prompt and context: "${userMessage}"\n`,
+            max_tokens: 10, // Expecting only one word response
+            temperature: 0.3,
             api_version: '2022-12-06',
         }),
     });
@@ -93,8 +96,8 @@ async function getChatbotResponse(fullPrompt) {
         body: JSON.stringify({
             model: 'command-xlarge-nightly',
             prompt: fullPrompt,
-            max_tokens: 800, // Adjust as needed
-            temperature: 0.7,
+            max_tokens: 1000, // Adjust as needed
+            temperature: 0.3,
             api_version: '2022-12-06',
         }),
     });
@@ -105,12 +108,9 @@ async function getChatbotResponse(fullPrompt) {
 
 // Main function to send message and handle chatbot response
 async function sendMessage() {
-    let memory = [];
-    let memoryCounter = 0;
     const userMessage = userInput.value;
     appendMessage(userMessage, true);
     userInput.value = '';
-
     memory[memoryCounter] = `User: ${userMessage}\n`;
 
     try {
@@ -122,15 +122,15 @@ async function sendMessage() {
         console.log('category: ' + category);
         // Step 2: Select appropriate document based on category
         let documentText = '';
-        fetch(`data/${category}.txt`)
-            .then((response) => response.text())
-            .then((data) => {
-                documentText = data;
-            })
-            .catch((error) => console.error('Error loading file:', error));
-
+        try {
+            const response = await fetch(`data/${category}.txt`);
+            documentText = await response.text();
+        } catch (error) {
+            console.error('Error loading file:', error);
+        }
+        memory[memoryCounter] = `User: ${userMessage}\nCategory: ${category}\n`;
         // Step 3: Formulate full prompt with selected document
-        const fullPrompt = `${prePrompt}\n\n${memory}\n\n${documentText}\n\nUser: ${userMessage}\nAssistant:`;
+        const fullPrompt = `${prePrompt}\n\n${memory}\n\n${documentText}\n\nAssistant:`;
 
         // Step 4: Get final response
         const chatbotResponse = await getChatbotResponse(fullPrompt);
@@ -139,8 +139,11 @@ async function sendMessage() {
         appendMessage(chatbotResponse, false);
 
         // Update memory and increment memoryCounter
-        memory[memoryCounter] += `Assistant: ${chatbotResponse}\n`;
+        memory[memoryCounter] = `User: ${userMessage}\nCategory: ${category}\nAssistant: ${chatbotResponse}\n`;
         memoryCounter++;
+        if (memoryCounter > 4){
+            memoryCounter = 0;
+        }
     } catch (error) {
         console.error('Error fetching from Cohere API:', error);
         appendMessage(
@@ -153,7 +156,11 @@ async function sendMessage() {
 }
 
 // Event listener for send button
-sendButton.addEventListener('click', sendMessage);
+sendButton.addEventListener('click', function () {
+    if (userInput.value.trim() !== '') {
+        sendMessage();
+    }
+});
 userInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         if (userInput.value.trim() !== '') {
