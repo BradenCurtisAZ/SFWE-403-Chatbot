@@ -45,11 +45,13 @@ async function getCategory(userMessage) {
         body: JSON.stringify({
             model: 'command-xlarge-nightly',
             prompt: `Classify this following prompt into one of the following categories: "Transfer_Credit", "Admission_Information", "BS_Program", 
-                "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives", "SFWE4YP", "Career_Opportunities", or "Research_Information":\n
+                "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives", "FinancialAid", "Career_Opportunities", or "Research_Information":\n
             Your response should be only the full name of the category.\n
-            For example, if the question is regarding admission information or about the people to talk to such as advisors "Admission_Information".\n
-            If the prompt is about declaring as an engineering major from someone who attends the university or is already in the college of engineering, respond with "BS_Program".\n
-            If the prompt is regarding classes or courses in the software engineering major program or for a specific year or semester, respond with "SFWE4YP".\n
+            For example, if the question is regarding admission information or is about declaring as an engineering major from someone who attends the university or is already in the college of engineering or about the people to talk to such as advisors respond with "Admission_Information".\n
+            If the prompt is regarding classes or courses in the software engineering major program or for a specific year or semester respond with "BS_Program".\n
+            If the propmt is about the descriptions of certain courses respond with "course_description"\n
+            If the prompt is about technical electives for the undergraduate/bachelors degree program respond with "Undergrad_Technical_Electives"
+            If the prompt is about financial aid or scholarship information respond with "FinancialAid"\n
             If the prompt is about transfer credit information, respond with "Transfer_Credit".\n
             If the prompt is about the MS or Master's Degree program respond with "MS_Program".\n
             If the prompt is about the PHD or Doctorate program respond with "PHD_Program".\n
@@ -123,14 +125,18 @@ async function sendMessage() {
         // Step 2: Select appropriate document based on category
         let documentText = '';
         try {
+            console.log(`Attempting to fetch: data/${category}.txt`);
             const response = await fetch(`data/${category}.txt`);
             documentText = await response.text();
+            console.log(`Fetched Document:`, documentText);
         } catch (error) {
             console.error('Error loading file:', error);
         }
+        
         memory[memoryCounter] = `User: ${userMessage}\nCategory: ${category}\n`;
         // Step 3: Formulate full prompt with selected document
         const fullPrompt = `${prePrompt}\n\n${memory}\n\n${documentText}\n\nAssistant:`;
+        //console.log(fullPrompt);
 
         // Step 4: Get final response
         const chatbotResponse = await getChatbotResponse(fullPrompt);
