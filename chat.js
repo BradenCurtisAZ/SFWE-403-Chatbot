@@ -13,7 +13,6 @@ const prePrompt = `You are a helpful, polite, and concise AI assistant for the U
 Your goal is to provide information to student prospects who are looking to attend the University of Arizona as a software engineering major and 
 current software engineering sudents persuing their bachelors, masters, or PhD degree. Answer questions as if you are an acedemic 
 advisor working in the software engineering department at the University of Arizona. 
-Adhere to the provided information as closely as possible. 
 Summarize information if a great portion of the data is irrelevant to the prompt.
 Any reference to SFWE is the Software Engineering major at the University of Arizona. 
 If a user asks for something you cannot help with, politely suggest alternative solutions or indicate your limitations. 
@@ -47,7 +46,7 @@ async function getCategory(userMessage) {
             prompt: `Classify this following prompt into one of the following categories: "Transfer_Credit", "Admission_Information", "BS_Program", 
                 "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives", "FinancialAid", "Career_Opportunities", or "Research_Information":\n
             Your response should be only the full name of the category.\n
-            For example, if the question is regarding admission information or is about declaring as an engineering major from someone who attends the university or is already in the college of engineering or about the people to talk to such as advisors respond with "Admission_Information".\n
+            For example, if the question is regarding admission or application information or is about declaring as an engineering major from someone who attends the university or is already in the college of engineering or about the people to talk to such as advisors respond with "Admission_Information".\n
             If the prompt is regarding classes or courses in the software engineering major program or for a specific year or semester respond with "BS_Program".\n
             If the propmt is about the descriptions of certain courses respond with "course_description"\n
             If the prompt is about technical electives for the undergraduate/bachelors degree program respond with "Undergrad_Technical_Electives"
@@ -58,6 +57,7 @@ async function getCategory(userMessage) {
             If the prompt is about career or job opportunities after graduation, respond with "Career_Opportunities".\n
             If the prompt is about research opportunities, respond with "Research_Information".\n
             If this is the second time you are asked to answer a question according to the context, use a different category than the one you used before.\n
+            Focus on the most recent prompt and use the conversation context to assist in determining the category.\n
             Here is the prompt and context: "${userMessage}"\n`,
             max_tokens: 10, // Expecting only one word response
             temperature: 0.3,
@@ -99,7 +99,7 @@ async function getChatbotResponse(fullPrompt) {
             model: 'command-xlarge-nightly',
             prompt: fullPrompt,
             max_tokens: 1000, // Adjust as needed
-            temperature: 0.3,
+            temperature: 0.4,
             api_version: '2022-12-06',
         }),
     });
@@ -133,9 +133,9 @@ async function sendMessage() {
             console.error('Error loading file:', error);
         }
         
-        memory[memoryCounter] = `User: ${userMessage}\nCategory: ${category}\n`;
+        memory[memoryCounter] += `Category: ${category}\nDocument: ${documentText}\n`;
         // Step 3: Formulate full prompt with selected document
-        const fullPrompt = `${prePrompt}\n\n${memory}\n\n${documentText}\n\nAssistant:`;
+        const fullPrompt = `${prePrompt}\n\n${memory}\n\nAssistant:`;
         //console.log(fullPrompt);
 
         // Step 4: Get final response
@@ -145,7 +145,7 @@ async function sendMessage() {
         appendMessage(chatbotResponse, false);
 
         // Update memory and increment memoryCounter
-        memory[memoryCounter] = `User: ${userMessage}\nCategory: ${category}\nAssistant: ${chatbotResponse}\n`;
+        memory[memoryCounter] += `Assistant: ${chatbotResponse}\n`;
         memoryCounter++;
         if (memoryCounter > 4){
             memoryCounter = 0;

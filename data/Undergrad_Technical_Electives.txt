@@ -1,7 +1,9 @@
 Technical Electives:
-Below is a list of approved undergraduate technical electives for software engineering students as of 11/7/24
+Below is a list of approved undergraduate technical electives for software engineering (SFWE) students as of 11/7/24
 For more information on pre-requisites, course description, enrollment restrictions and when they are offered, visit https://arizona.box.com/s/cxehk9alddlpoek2oimyz9syn7l0114h or the course catalog at https://catalog.arizona.edu/courses 
-If you are a UA student, login to Box using your netID and password, otherwise you must log in with a box.com account
+
+When asked about tech electives, display a random assortment of these Tech Electives.
+If asked for tech electives in a specific topic, choose tech electives related to that topic.
 
 Systems and Industrial Engineering (SIE) Eligible Technical Electives:
 SIE 477 Introduction to Biomedical information
