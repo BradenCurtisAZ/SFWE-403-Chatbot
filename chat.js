@@ -43,8 +43,18 @@ async function getCategory(userMessage) {
         },
         body: JSON.stringify({
             model: 'command-xlarge-nightly',
-            prompt: `Classify this following prompt into one of the following categories: "Transfer_Credit", "Admission_Information", "BS_Program", 
-                "Course_Description", "MS_Program", "PHD_Program", "Undergrad_Technical_Electives", "FinancialAid", "Career_Opportunities", or "Research_Information":\n
+            // Pre-prompt that specifies category classification task
+            prompt: `Classify this following prompt into one of the following categories: 
+            "Transfer_Credit", 
+            "Admission_Information", 
+            "BS_Program", 
+            "Course_Description", 
+            "MS_Program", 
+            "PHD_Program", 
+            "Undergrad_Technical_Electives", 
+            "FinancialAid", 
+            "Career_Opportunities", 
+            "Research_Information".\n
             Your response should be only the full name of the category.\n
             For example, if the question is regarding admission or application information or is about declaring as an engineering major from someone who attends the university or is already in the college of engineering or about the people to talk to such as advisors respond with "Admission_Information".\n
             If the prompt is regarding classes or courses in the software engineering major program or for a specific year or semester respond with "BS_Program".\n
@@ -113,6 +123,8 @@ async function sendMessage() {
     const userMessage = userInput.value;
     appendMessage(userMessage, true);
     userInput.value = '';
+
+    // Append user message to current Memory Index
     memory[memoryCounter] = `User: ${userMessage}\n`;
 
     try {
@@ -132,11 +144,11 @@ async function sendMessage() {
         } catch (error) {
             console.error('Error loading file:', error);
         }
-        
+        // add decided category and document to current memory index
         memory[memoryCounter] += `Category: ${category}\nDocument: ${documentText}\n`;
+
         // Step 3: Formulate full prompt with selected document
         const fullPrompt = `${prePrompt}\n\n${memory}\n\nAssistant:`;
-        //console.log(fullPrompt);
 
         // Step 4: Get final response
         const chatbotResponse = await getChatbotResponse(fullPrompt);
@@ -144,7 +156,7 @@ async function sendMessage() {
         // Step 5: Append the response to the chat
         appendMessage(chatbotResponse, false);
 
-        // Update memory and increment memoryCounter
+        // Update memory with AI's response and increment memoryCounter
         memory[memoryCounter] += `Assistant: ${chatbotResponse}\n`;
         memoryCounter++;
         if (memoryCounter > 4){
